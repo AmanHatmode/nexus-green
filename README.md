@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nexus-Green: Real-time Urban Heat & Traffic Intelligence Dashboard
 
-## Getting Started
+### 3. Project Documentation
 
-First, run the development server:
+| Section | Description |
+| :--- | :--- |
+| **Project Title** | **Nexus-Green: Real-time Urban Microclimate Intelligence & Predictive Heat Mitigation Engine** |
+| **Problem Statement** | Rapid urbanization in Maharashtra’s tier-1 and tier-2 cities, specifically **Nagpur**, has led to the critical **Urban Heat Island (UHI)** effect. High-density concrete surfaces, heavy traffic exhaust, and a lack of ecological green corridors cause localized Temperatures to spike up to **6°C higher** than the city average in vulnerable wards. This creates hazardous living conditions and increases the risk of mortality during heatwaves. Municipal bodies currently lack **ward-level, real-time visibility** to proactively deploy cooling units or issue hyper-localized public health warnings. |
+| **AI Component** | Our solution utilizes **Google Gemini 1.5 Flash** to perform two specialized intelligence functions: <br/> 1. **Multimodal Street Analysis:** Incident Commanders upload field photographs which are parsed by Gemini's vision capability to detect heat-reflective materials (asphalt, dark concrete) and identify safe "Natural Cooling Zones." <br/> 2. **Reasoning-based Advisories:** Using the **Vercel AI SDK**, Gemini analyzes the live-calculated gap between current temperatures and the 5-year historical maximums. It generates unique, 3-point **Actionable Emergency Plans** for each ward rather than generic city-wide alerts. |
+| **Architecture Diagram** | ```mermaid <br/> graph TD; <br/> User([Incident Commander]) --> |Secure Portal - Firebase Auth| Frontend[Next.js Dashboard UI]; <br/> Frontend --> |Containerized API - Cloud Run| Backend[Node.js Intelligence Engine]; <br/> Backend <--> |Multimodal Vision & Reasoning| Gemini[Google Gemini 1.5 Flash]; <br/> Backend <--> |Local Data Fallback| Storage[Firebase Firestore]; <br/> Backend <--> |Sensor Ingestion| APIs[OpenMeteo & Traffic Metrics]; <br/> Backend --> |Trigger Protocol| Output([Live Field Agent Dispatch]); <br/> ``` |
+| **Deployment URL** | [Your Google Cloud Run URL will go here] |
+| **Implementation Details** | The platform is built on a **Next.js** framework and containerized with **Docker** for deployment on **Google Cloud Run** to ensure serverless, scalable execution. We implemented a deterministic microclimate algorithm that models three distinct city zones: **Industrial (+2.5°C penalty)**, **Urban (Baseline)**, and **Green (-1.8°C cooling)**. By integrating the AI reasoning layer directly with this 7-day micro-forecast, the system can predict "Heat Danger Thresholds" before they occur, allowing governance to move from reactive crisis management to pre-emptive city cooling. |
+| **GIT Hub** | https://github.com/amanhatmode1/nexus-green |
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Created for the Maharashtra Smart City Hackathon 2026*

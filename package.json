@@ -9,9 +9,22 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.57",
+    "@google-cloud/vision": "^5.3.5",
+    "@supabase/supabase-js": "^2.101.1",
+    "@types/jspdf": "^1.3.3",
+    "@types/leaflet": "^1.9.21",
+    "ai": "^6.0.145",
+    "firebase": "^12.11.0",
+    "firebase-admin": "^13.7.0",
+    "jspdf": "^4.2.1",
+    "leaflet": "^1.9.4",
     "next": "16.2.2",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-leaflet": "^5.0.0",
+    "recharts": "^3.8.1",
+    "uid": "^2.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
