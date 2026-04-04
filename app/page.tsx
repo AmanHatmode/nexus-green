@@ -1,13 +1,15 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
+import nextDynamic from 'next/dynamic';
 import jsPDF from 'jspdf';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
 import OfficerAccess from '@/components/OfficerAccess';
 
 // Dynamic import for Map to avoid SSR issues
-const Map = dynamic(() => import('@/components/Map'), { ssr: false });
+const Map = nextDynamic(() => import('@/components/Map'), { ssr: false });
 
 export default function Dashboard() {
   const [isOfficerAuthorized, setIsOfficerAuthorized] = useState(false);
