@@ -12,7 +12,13 @@
 
 ## 🔗 Live Demo
 
-👉 [Live Demo](https://your-cloud-run-url) &nbsp;|&nbsp; [GitHub](https://github.com/AmanHatmode/nexus-green)
+👉 **[nexus-green-zeta.vercel.app](https://nexus-green-zeta.vercel.app)** &nbsp;|&nbsp; [GitHub](https://github.com/AmanHatmode/nexus-green)
+
+### 🔐 Demo Login Credentials
+| Field | Value |
+|---|---|
+| **Officer Email** | `admin@nexus.gov.in` |
+| **Security Badge ID** | `IND-NEXUS-001` |
 
 ---
 
