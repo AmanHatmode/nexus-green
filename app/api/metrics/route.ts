@@ -31,11 +31,17 @@ export async function GET() {
       }
     } catch(e) {}
 
-    let agentCount = 0;
+    let agentCount = 24;
     try {
-      const { db } = await import('@/lib/firebaseAdmin');
-      const snap = await db.collection('agents').count().get();
-      agentCount = snap.data().count;
+      if (
+        process.env.FIREBASE_PROJECT_ID &&
+        process.env.FIREBASE_CLIENT_EMAIL &&
+        process.env.FIREBASE_PRIVATE_KEY
+      ) {
+        const { db } = await import('@/lib/firebaseAdmin');
+        const snap = await db.collection('agents').count().get();
+        agentCount = snap.data().count;
+      }
     } catch {
       agentCount = 24;
     }

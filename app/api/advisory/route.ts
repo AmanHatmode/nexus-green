@@ -171,13 +171,23 @@ PROJECTED IMPACT: [One sentence with bold numbers: if all three actions are depl
 Be extremely specific. Reference landmarks, roads, and real infrastructure of ${ward_name}. All numbers must be scientifically plausible.`;
   }
 
+  // ── Confidence score (0–100) ──────────────────────────────────────────────
+  // Higher confidence when current values are far from historical maxima
+  // (we understand the zone well and it's not near catastrophic thresholds).
+  const tempRatio  = hist_max_temp  > 0 ? Math.min(temperature  / hist_max_temp,  1) : 0.5;
+  const aqiRatio   = hist_max_aqi   > 0 ? Math.min(aqi          / hist_max_aqi,   1) : 0.5;
+  // Invert: far from max → high confidence; near max → low confidence
+  const rawConfidence = (1 - tempRatio * 0.6 - aqiRatio * 0.4) * 100;
+  // Clamp to 10–95 so it's always a meaningful number
+  const confidence = Math.round(Math.min(95, Math.max(10, rawConfidence)));
+
   try {
     const { text } = await generateText({
       model: google('gemini-1.5-pro'),
       prompt,
       temperature: 0.3,
     });
-    return NextResponse.json({ advisory: text });
+    return NextResponse.json({ advisory: text, confidence });
   } catch (error) {
     console.error('Gemini AI API Error:', error);
 
@@ -193,6 +203,6 @@ Be extremely specific. Reference landmarks, roads, and real infrastructure of ${
     };
 
     const fallbackText = getFallback();
-    return NextResponse.json({ advisory: fallbackText });
+    return NextResponse.json({ advisory: fallbackText, confidence });
   }
 }

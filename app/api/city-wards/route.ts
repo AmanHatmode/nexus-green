@@ -82,8 +82,8 @@ export async function GET(req: Request) {
 
   // Fetch live current temperature for this city from Open-Meteo
   let liveTemp = 38;
-  let liveAqi  = 130;
-  let liveTraffic = 350;
+  const liveAqi  = 130;
+  const liveTraffic = 350;
 
   try {
     const res = await fetch(

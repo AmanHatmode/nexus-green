@@ -25,6 +25,7 @@ export const CITY_WARDS: Record<string, WardEntry[]> = {
     { name: 'Ambazari',      lat: 21.1372, lng: 79.0631, tempOffset: -3.0, aqiOffset: -40, trafficOffset: -130 },
     { name: 'Hingna',        lat: 21.1108, lng: 79.0482, tempOffset: -1.5, aqiOffset: -25, trafficOffset: -100 },
     { name: 'Shivaji Nagar', lat: 21.1389, lng: 79.0756, tempOffset: -2.5, aqiOffset: -35, trafficOffset: -110 },
+    { name: 'RBI Square',    lat: 21.1581, lng: 79.0780, tempOffset:  4.8, aqiOffset:  68, trafficOffset:  310 },
   ],
 
   'Mumbai': [

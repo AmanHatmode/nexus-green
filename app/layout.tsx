@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${inter.className} bg-[var(--background)] text-[var(--foreground)] w-full h-full min-h-screen overflow-hidden`}>
         {children}
+        <div className="scanline-overlay" />
       </body>
     </html>
   );
